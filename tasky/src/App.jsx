@@ -10,9 +10,9 @@ function App() {
   const [count, setCount] = useState(0)
   const [ taskState, setTaskState ] = useState({
     tasks: [
-      { id: 1, title:"Dishes", description: "Empty dishwasher", deadline: "Today" },
-      { id: 2, title: "Laundry", description: "Fold clothes and put away", deadline: "Tomorrow" },
-      { id: 3, title: "Tidy up", deadline: "Today" }
+      { id: 1, title:"Dishes", description: "Empty dishwasher", deadline: "Today", level:"Low" },
+      { id: 2, title: "Laundry", description: "Fold clothes and put away", deadline: "Tomorrow", level:"Medium" },
+      { id: 3, title: "Tidy up", deadline: "Today", level:"High" }
     ]
   });
 
@@ -25,6 +25,7 @@ function App() {
           title={task.title}
           description={task.description}
           deadline={task.deadline}
+          level={task.level}
           key={task.key}
         />
       ))} 
