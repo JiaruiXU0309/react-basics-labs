@@ -21,7 +21,8 @@ function App() {
     const [ formState, setFormState ] = useState({
     title: "",
     description: "",
-    deadline: ""
+    deadline: "",
+    level: "Medium"
   });
 
 
@@ -49,6 +50,9 @@ function App() {
           break;
       case "deadline":
           form.deadline = event.target.value;
+          break;
+      case "level":
+          form.level = event.target.value;
           break;
       default:
           form = formState;
