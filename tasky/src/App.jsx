@@ -88,11 +88,12 @@ function App() {
           align="center"
           gutterBottom
           sx={{
-            backgroundColor: 'gray',
+            backgroundColor: 'primary.main',
             textAlign: 'center',
             color: 'white',
             padding: '20px',
             margin: '20px 0 40px 0',
+            p: 2,
             borderRadius: '4px'
           }}
         >
@@ -107,7 +108,9 @@ function App() {
           container
           spacing={5}
           alignItems="flex-start"
-          justifyContent="center"
+          sx={{
+            justifyContent: "center"
+          }}
         >
           {taskState.tasks.map((task, index) => (
             <Task
@@ -134,7 +137,9 @@ function App() {
           py: 6,
         }}
       >
-        <Grid container justifyContent="center">
+        <Grid container sx={{
+          justifyContent: "center"
+        }}>
           <AddTaskForm
             submit={formSubmitHandler}
             change={formChangeHandler}

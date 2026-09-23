@@ -35,8 +35,6 @@ const AddTaskForm = (props) => {
     <Box
       component="form"
       sx={{
-        width: 'fit-content',
-        mx: 'auto',
         '& .MuiOutlinedInput-root': { m: 1, width: '30ch' },
       }}
       onSubmit={props.submit}

@@ -6,31 +6,17 @@ import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import CheckIcon from '@mui/icons-material/Check';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Chip from '@mui/material/Chip';
 
 const Task = (props) => {
 
-    let backgroundColor;
-    if (props.level === "High") {
-        backgroundColor = "red";
-    } else if (props.level === "Medium") {
-        backgroundColor = "orange";
-    } else {
-        backgroundColor = "green";
-    }
-
-
     return (
-        // <div className="card" style={{backgroundColor: props.done ? 'lightgrey' : '#5bb4c4'}}>
-        // <p className="title">{props.title}</p>
-        // <p>Due: {props.deadline}</p>
-        // <p className="description">{props.description}</p>
-        // <p className="level" style={{backgroundColor: props.done ? 'lightgrey' : backgroundColor}}>{props.level}</p>
-        // <button onClick={props.markDone} className='doneButton'>Done</button>
-        // <button className='deleteButton' onClick={props.deleteTask}>Delete</button>
-        // </div>
         <Grid
             key={props.id}
-            size={{ xs: 12, md: 4 }}
+            size={{ xs: 12, sm: 6, md: 4 }}
         >
             <Card
                 sx={{
@@ -42,8 +28,8 @@ const Task = (props) => {
                     title={props.title}
                     sx={{
                         backgroundColor: 'white',
-                        borderRadius: '3px',
-                        padding: '20px',
+                        borderRadius: '20px',
+                        padding: '5px 20px',
                         textAlign: 'center'
                     }}
                 />
@@ -75,7 +61,24 @@ const Task = (props) => {
                     >
                         {props.description}
                     </Typography>
+
+                    <Chip
+                        label={props.level}
+                        color={
+                            props.level == 'High' ? 'error' :
+                                props.level == 'Medium' ? 'secondary' :
+                                    'success'
+                        }
+                        sx={{
+                            display: 'flex',
+                            width: 'fit-content',
+                            mx: 'auto'
+                        }}
+                    >
+                    </Chip>
                 </CardContent>
+
+
 
                 <CardActions
                     sx={{
@@ -83,23 +86,22 @@ const Task = (props) => {
                         padding: '20px'
                     }}
                 >
-                    <Button
-                        variant="contained"
-                        size="small"
-                        color="success"
+                    <IconButton
+                        aria-label="mark task as done"
+                        color="default"
                         onClick={props.markDone}
                     >
-                        Done
-                    </Button>
+                        <CheckIcon />
+                    </IconButton>
 
-                    <Button
-                        variant="contained"
-                        size="small"
-                        color="error"
+                    <IconButton
+                        aria-label="delete task"
+                        color="default"
                         onClick={props.deleteTask}
                     >
-                        Delete
-                    </Button>
+
+                        <DeleteIcon />
+                    </IconButton>
                 </CardActions>
             </Card>
         </Grid>

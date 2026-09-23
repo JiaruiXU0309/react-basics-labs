@@ -44,11 +44,11 @@ div {
 .description {
   font-style: italic;
 } */
-
+/* 
 .level {
   font-weight: bold;
   border-radius: 4px;
-}
+} */
 
 /* button {
   border: none;
@@ -98,7 +98,7 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #45a049;
 } */
-
+/* 
 select {
   width: 100%;
   padding: 12px 20px;
@@ -106,7 +106,7 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-}
+} */
 
 /* form {
   text-align: left;
